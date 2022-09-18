@@ -20,7 +20,14 @@
     flex-direction: column;
     margin: auto;
     width: 100%;
-    max-width: 420px
+}
+
+#PLAYMENU, #PLAYMAZE {
+    max-width: 420px;
+}
+
+#PLAYMENU, #PLAYMAZE, .editCanvas {
+    margin: auto;
 }
 
 .editCanvas {
