@@ -1,0 +1,450 @@
+﻿body {
+    background-color: lightblue;
+    font-family: Calibri, sans-serif;
+    overflow: auto;
+    -ms-scroll-rails: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-touch-action: pinch-zoom pan-x pan-y;
+    -ms-content-zooming: zoom;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+}
+
+#PLAYMENU, #MAZE {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.editCanvas {
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+td.wall {
+    background-color: #1B3412;
+    background-repeat: no-repeat;
+}
+
+td.wallPost {
+    background-color: #0C1608;
+}
+
+td.space {
+    background-color: #758D56;
+}
+
+#EDITMAZEWRAPPER {
+}
+
+#EDITMAZE {
+}
+
+    #EDITMAZE td {
+        width: 40px;
+        height: 40px;
+    }
+
+        #EDITMAZE td.wallRow {
+            height: 10px;
+        }
+
+        #EDITMAZE td.wallColumn {
+            width: 10px;
+        }
+
+        #EDITMAZE td.start {
+            background-image: url('../images/start_small.png');
+            background-repeat: no-repeat;
+        }
+
+        #EDITMAZE td.goal {
+            background-image: url('../images/goal_small.png');
+            background-repeat: no-repeat;
+        }
+
+        #EDITMAZE td.goalDisabled {
+            background-image: url('../images/goal_small_disabled.png');
+            background-repeat: no-repeat;
+        }
+
+        #EDITMAZE td.occupied {
+            background-image: url('../images/ball_small.png');
+            background-repeat: no-repeat;
+        }
+
+#PLAYMAZE td {
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+    color: #1B3412;
+    text-align: center;
+    cursor: default;
+}
+
+    #PLAYMAZE td.wallRow {
+        height: 30px;
+    }
+
+    #PLAYMAZE td.wallColumn {
+        width: 30px;
+    }
+
+    #PLAYMAZE td.start {
+        background-image: url('../images/start_big.png');
+        background-repeat: no-repeat;
+    }
+
+    #PLAYMAZE td.goal {
+        background-image: url('../images/goal_big.png');
+        background-repeat: no-repeat;
+    }
+
+    #PLAYMAZE td.goalDisabled {
+        background-image: url('../images/goal_big_disabled.png');
+        background-repeat: no-repeat;
+    }
+
+    #PLAYMAZE td.occupied {
+        /*background-image: url('../images/ball_big.png');
+          background-repeat: no-repeat;*/
+    }
+
+h2 {
+    margin: 10px 0;
+}
+
+.easterEgg {
+    height: 50px;
+    width: 50px;
+    float: right;
+    background-color: #F9F9F9; /* Light Theme */
+    /*background-color: #1C1C1C;*/ /* Dark Theme */
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+#TIMER {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+#GOALS {
+    font-size: 30px;
+}
+
+#GAMESTATS {
+    font-size: 14pt;
+    margin-top: 24px;
+    width: 250px;
+    float: left;
+    /*float:left;*/
+    /*margin-top: 40px;*/
+}
+
+#KEYPAD {
+    text-align: center;
+    width: 230px;
+    float: left;
+    padding-top: 20px;
+    display: none;
+}
+
+    #KEYPAD input {
+        margin: 0px;
+    }
+
+#MAZE {
+}
+
+#PLAYMAZE {
+    background-color: #fff;
+}
+
+.menuContent {
+    float: left;
+}
+
+input {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.edit {
+    display: none;
+}
+
+#LOCKSTARTGOALS {
+    width: 150px;
+}
+
+#appBar {
+   margin-top: 10px;
+}
+
+.appBarRight {
+    float: right;
+}
+
+.appBarLeft {
+    float: left;
+}
+
+.appBarButton {
+    margin: 2px;
+    /*font-family: 'Segoe UI Light';*/
+    /*font-size: 11pt;*/
+}
+
+    .resizeButton div {
+        text-align: center;
+    }
+
+#SELECTMAZE {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 49px;
+    font-size: 20px;
+}
+
+#MAZENAME_EDIT {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+}
+
+    #MAZENAME_EDIT::-ms-clear {
+        display: none;
+    }
+
+#START {
+    height: 55px;
+    width: 155px;
+    /*float:right;*/
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-size: 25px;
+    margin-right: 0;
+}
+
+.header {
+    font-family: 'Segoe UI';
+    width: 100%;
+}
+
+.settings {
+    width: 150px;
+}
+
+.hide {
+    display: none;
+}
+
+.alertContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+.alertBox {
+    width: 100%;
+    /*height: 144px;*/
+    background-color: white;
+    font-family: 'Segoe UI';
+    color: black;
+}
+
+.alertBackground {
+    width: 100%;
+    height: calc(50% - 60px);
+    background-color: black;
+    opacity: 0.45;
+}
+
+.alertBoxInner {
+    max-width: 460px;
+    min-width: 50%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.alertMessage {
+    font-size: 19.5pt;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.alertInfo {
+    font-size: 10.7pt;
+    padding-bottom: 10px;
+}
+
+#ALERTINPUT {
+    border: 1px #464646 solid;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+}
+
+.alertButtons {
+    text-align: right;
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
+
+#ALERTFALSE, #ALERTCANCEL {
+    border: 0.1em solid #008CBA;
+    background-color: #fff;
+    color: #008CBA;
+    margin-right: 0;
+    margin-left: 12px;
+    padding: 0 16px;
+    box-shadow: none;
+}
+
+    #ALERTFALSE:hover, #ALERTCANCEL:hover {
+        color: #fff;
+        background-color: #008CBA;
+        border-color: #008CBA;
+    }
+
+#ALERTTRUE {
+    font-size: 12pt;
+    margin-right: 0;
+    margin-left: 12px;
+    padding: 0 16px;
+    border-color: #008CBA;
+    box-shadow: none;
+}
+
+#START::before {
+    content: " ";
+    background-size: cover;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    background-image: url("../images/buttons/play.svg");
+    width: 16px;
+    margin-right: 8px;
+}
+#START.pause::before {
+    background-image: url("../images/buttons/pause.svg");
+}
+
+.appBarButton::before {
+    content: " ";
+    background-size: cover;
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin: 4px auto;
+}
+
+.playButton::before {
+    background-image: url("../images/buttons/play.svg");
+    width: 16px;
+}
+.editButton::before {
+    background-image: url("../images/buttons/edit.svg");
+}
+.pauseButton::before {
+    background-image: url("../images/buttons/pause.svg");
+    width: 16px;
+}
+.undoButton::before,.resetButton::before {
+    background-image: url("../images/buttons/undo.svg");
+}
+.importButton::before {
+    background-image: url("../images/buttons/import.svg");
+}
+.exportButton::before {
+    background-image: url("../images/buttons/export.svg");
+}
+.newButton::before {
+    background-image: url("../images/buttons/new.svg");
+}
+.renameButton::before {
+    background-image: url("../images/buttons/rename.svg");
+    width: 24px;
+}
+.saveButton::before,.saveAsButton::before {
+    background-image: url("../images/buttons/save.svg");
+}
+.deleteButton::before {
+    background-image: url("../images/buttons/delete.svg");
+    width: 18px;
+}
+.clearButton::before {
+    background-image: url("../images/buttons/clear.svg");
+    width: 29px;
+}
+.lockButton::before {
+    background-image: url("../images/buttons/lock.svg");
+    width: 16px;
+}
+.unlockButton::before {
+    background-image: url("../images/buttons/unlock.svg");
+    width: 16px;
+}
+.resizeButton::before {
+    background-image: url("../images/buttons/resize.svg");
+    width: 22px;
+}
+
+button,input[type=button] {
+    display: inline-block;
+    border-radius: 0.12em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 0.1em solid #008CBA;
+    background-color: #008CBA;
+    color: #fff;
+    box-shadow: 0px 0px 8px #00bcba;
+}
+button::before {
+    transition: all 0.2s;
+    filter: invert(100%);
+}
+button:hover,input[type=button]:hover {
+    color: #00BCBA;
+    background-color: #fff;
+    border-color: #fff;
+}
+button:hover::before {
+    filter: unset;
+    filter: invert(60%) sepia(97%) saturate(2187%) hue-rotate(136deg) brightness(91%) contrast(101%);
+}
+button:disabled {
+    cursor: default;
+    background-color: #008CBA;
+    border-color: #008CBA;
+    color: #00BDBA;
+}
+button:disabled::before{
+    filter: invert(60%) sepia(97%) saturate(2187%) hue-rotate(136deg) brightness(91%) contrast(101%);
+}

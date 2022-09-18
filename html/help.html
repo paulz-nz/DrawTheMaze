@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Help</title>
+    <script src="/js/default.js"></script>
+    <link href="/css/default.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- BEGINSETTINGSFLYOUT -->
+    <div data-win-control="WinJS.UI.SettingsFlyout" id="help" aria-label="Options">
+        <!-- Use either 'win-ui-light' or 'win-ui-dark' depending on the contrast between the header title and background color -->
+        <div class="win-ui-dark win-header" style="background-color: #1B3412">
+            <!-- Background color reflects app's personality -->
+            <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+            <div class="win-label">Help</div>
+        </div>
+        <div class="win-content">
+            <div class="win-settings-section">
+                <div>
+                    <h4>Play mode:</h4>
+                    <ul>
+                        <li>Select a maze from the dropdown to load that maze</li>
+                        <li>Once a maze is selected, touch 'Start!' to begin</li>
+                        <li>You can only see 1 space either side of your current position</li>
+                        <li>Navigate the maze using the arrow keys, or touch on the maze in the direction you want to move. You can also swipe down on the maze to move up, or swipe left to move right etc</li>
+                        <li>Collect all the goals (stars) to complete the maze. The number of Goals remaining is indicated above the maze</li>
+                    </ul>
+                    <p></p>
+                    <h4>Edit mode:</h4>
+                    <ul>
+                        <li>Switch between play mode and Edit mode using the right-most button on the App bar (swipe up from the bottom to reveal)</li>
+                        <li>Whichever maze is loaded when you open 'Edit mode' will be pulled through by default</li>
+                        <li>Select 'New' on the app bar to create a new maze from scratch</li>
+                        <li>Select 'Save As' on the app bar to save the current maze as a new maze - you will be prompted for a new name</li>
+                        <li>Select 'Rename' on the app bar to rename the current maze</li>
+                        <li>Select 'Save' from the app bar to save changes to the current maze</li>
+                        <li>Select 'Clear All' on the app bar to wipe the current maze and start fresh</li>
+                        <li>Enter a custom size into the 'Resize' box on the app bar to resize the maze; max of 30x30</li>
+                        <li>Select 'Undo' to roll back up to 10 changes; including walls added/removed, resizing, or clearing all</li>
+                        <li>Touch one of the spaces on the maze to set the 'start' point. If there is already a start point, a 'goal' will be added instead</li>
+                        <li>Touch the 'start' space or one of the 'goal' spaces to clear that space</li>
+                        <li>Select between 2 posts to add or remove a wall</li>
+                        <li>Zoom in using the stretch gesture to make adding and removing walls easier</li>
+                        <li>Toggle 'Lock Start/Goals' on the app bar to prevent accidently adding new starts/goals while adding walls. Toggle it again to unlock</li>
+                        <li>Select 'Play mode' on the app bar, and then press 'Start!' to test out your maze. Click 'Edit mode' again at any time to go back to the edit screen</li>
+                    </ul>
+                    <p></p>
+                    <h4>Coming soon:</h4>
+                    <ul>
+                        <li>Online mode</li>
+                        <li>Highscores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENDSETTINGSFLYOUT -->
+</body>
+</html>
