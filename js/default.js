@@ -818,7 +818,7 @@ Maze.saveAsNew = async function (previousOptionIndex, isCreateNew) {
 
     // Prompt for name, and then save
     var confirmed = await prompt("Enter a unique name for the new maze", null, previousOption ? previousOption.innerHTML : null, null, null, "Save", "Cancel");
-    Maze.saveAsNewCallback(confirmed, [select, previousOption.value, layout, isCreateNew]);
+    Maze.saveAsNewCallback(confirmed, [select, previousOption?.value, layout, isCreateNew]);
 }
 
 Maze.saveAsNewCallback = async function (confirmed, params) {
