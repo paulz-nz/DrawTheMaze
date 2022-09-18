@@ -383,25 +383,25 @@ Maze.renderPlayMaze = function () {
                 cell.className = existingCell.classList;
 
                 // Add inline click-to-move with arrow indicators whether it's a valid move
-                if (i == x - 2 && j == y && !document.getElementById((x - 1) + "-" + y).classList.contains("wall")) {
+                if (i == x - 2 && j == y && (!document.getElementById((x - 1) + "-" + y).classList.contains("wall") || Maze._noClipEnabled)) {
                     cell.innerHTML = "^";
                     cell.onclick = function () {
                         Maze.moveUp();
                     }
                 }
-                else if (i == x && j == y - 2 && !document.getElementById(x + "-" + (y - 1)).classList.contains("wall")) {
+                else if (i == x && j == y - 2 && (!document.getElementById(x + "-" + (y - 1)).classList.contains("wall") || Maze._noClipEnabled)) {
                     cell.innerHTML = "<";
                     cell.onclick = function () {
                         Maze.moveLeft();
                     }
                 }
-                else if (i == x && j == y + 2 && !document.getElementById(x + "-" + (y + 1)).classList.contains("wall")) {
+                else if (i == x && j == y + 2 && (!document.getElementById(x + "-" + (y + 1)).classList.contains("wall") || Maze._noClipEnabled)) {
                     cell.innerHTML = ">";
                     cell.onclick = function () {
                         Maze.moveRight();
                     }
                 }
-                else if (i == x + 2 && j == y && !document.getElementById((x + 1) + "-" + y).classList.contains("wall")) {
+                else if (i == x + 2 && j == y && (!document.getElementById((x + 1) + "-" + y).classList.contains("wall") || Maze._noClipEnabled)) {
                     cell.innerHTML = "v";
                     cell.onclick = function () {
                         Maze.moveDown();
@@ -500,6 +500,7 @@ Maze.render = function (layout, isEditMode, skipUndo) {
     // Reset a few things
     Maze._gameOver = true;
     window.onkeydown = null;
+    Maze._noClipEnabled = false;
     table.innerHTML = "";
     document.getElementById("TIMER").innerHTML = "00:00.000";
     document.getElementById("GOALS").innerHTML = layout.split("*").length - 1;
@@ -607,7 +608,7 @@ Maze.showFullMaze = function (show) {
 }
 
 // Movement by keyboard keys
-Maze.keyPress = function (e, ignoreWalls) {
+Maze.keyPress = function (e) {
     e = e || window.event;
 
     var key = e.keyCode;
@@ -618,38 +619,40 @@ Maze.keyPress = function (e, ignoreWalls) {
     }
 
     if (key == 37 || key == 65) { // Left or 'A'
-        Maze.moveLeft(ignoreWalls);
+        Maze.moveLeft();
     }
     else if (key == 38 || key == 87) { // Up or 'W'
-        Maze.moveUp(ignoreWalls);
+        Maze.moveUp();
     }
     else if (key == 39 || key == 68) { // Right or 'D'
-        Maze.moveRight(ignoreWalls);
+        Maze.moveRight();
     }
     else if (key == 40 || key == 83) { // Down or 'S'
-        Maze.moveDown(ignoreWalls);
+        Maze.moveDown();
     }
 }
 
-Maze.moveLeft = function (ignoreWalls) {
-    Maze.move(0, -1, ignoreWalls);
+Maze.moveLeft = function () {
+    Maze.move(0, -1);
 }
 
-Maze.moveRight = function (ignoreWalls) {
-    Maze.move(0, 1, ignoreWalls);
+Maze.moveRight = function () {
+    Maze.move(0, 1);
 }
 
-Maze.moveUp = function (ignoreWalls) {
-    Maze.move(-1, 0, ignoreWalls);
+Maze.moveUp = function () {
+    Maze.move(-1, 0);
 }
 
-Maze.moveDown = function (ignoreWalls) {
-    Maze.move(1, 0, ignoreWalls);
+Maze.moveDown = function () {
+    Maze.move(1, 0);
 }
 
 // An in-game movement - row/col movement determines direction (neg = up/left)
-Maze.move = function (rowMovement, colMovement, ignoreWalls) {
+Maze.move = function (rowMovement, colMovement) {
     if (Maze._gameOver) { return; }
+
+    var ignoreWalls = Maze._noClipEnabled;
 
     // Get the current occupied cell
     var occupied = document.getElementsByClassName("occupied")[0];
@@ -1101,7 +1104,8 @@ Maze.easterEgg_showFullMaze = function () {
 // Allows keyboard users to walk through walls
 Maze.easterEgg_walkThroughWalls = function () {
     if (!Maze._isEditMode && !Maze._gameOver) {
-        window.onkeydown = function () { Maze.keyPress(this.event, true); }
+        Maze._noClipEnabled = true;
+        //window.onkeydown = function () { Maze.keyPress(this.event, true); }
     }
 }
 
