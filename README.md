@@ -1,4 +1,4 @@
-# Draw The Maze
+# Draw The Maze - [▶ Play](https://paulz-nz.github.io/DrawTheMaze/)
 
 ## Play mode:
 
