@@ -19,6 +19,8 @@
     display: flex;
     flex-direction: column;
     margin: auto;
+    width: 100%;
+    max-width: 420px
 }
 
 .editCanvas {
@@ -145,6 +147,7 @@ h2 {
 #TIMER {
     font-size: 30px;
     margin-right: 20px;
+    display: block;
 }
 
 #GOALS {
@@ -152,12 +155,20 @@ h2 {
 }
 
 #GAMESTATS {
-    font-size: 14pt;
-    margin-top: 24px;
-    width: 250px;
-    float: left;
-    /*float:left;*/
-    /*margin-top: 40px;*/
+    font-size: 16pt;
+    flex: 1;
+}
+
+.goalsWrapper {
+    white-space: nowrap;
+    line-height: 12pt;
+}
+
+.goalsWrapper img {
+    height: 30px;
+    position: relative;
+    top: 5px;
+    left: 4px;
 }
 
 #KEYPAD {
@@ -180,7 +191,9 @@ h2 {
 }
 
 .menuContent {
-    float: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 input {
@@ -241,10 +254,10 @@ input {
     height: 55px;
     width: 155px;
     /*float:right;*/
-    margin-bottom: 10px;
-    margin-left: 15px;
+    margin-left: 0;
     font-size: 25px;
     margin-right: 0;
+    flex: 1;
 }
 
 .header {

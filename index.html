@@ -21,7 +21,10 @@
         <div id="MAZE">
             <div id="PLAYMENU">
                 <div class="menuContent">
-                    <div id="GAMESTATS"><span id="TIMER">00:00.000</span> Goals: <span id="GOALS">0</span></div>
+                    <div id="GAMESTATS">
+                        <span class="goalsWrapper">Goals: <span id="GOALS">0</span><img src="images/goal_small.png"/></span>
+                        <span id="TIMER">00:00.000</span>
+                    </div>
                     <button id="START" onclick="Maze.startOrPauseButton(this)">Start!</button>
                 </div>
             </div>
