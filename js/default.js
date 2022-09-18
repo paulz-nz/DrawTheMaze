@@ -40,6 +40,7 @@ Maze.initialise = function () {
     Maze.registerSwipeEvents();
     Maze.startOnEnter();
     Maze.initImportEvent();
+    Maze.preloadAllImgs();
 }
 
 Maze.loadSettings = function () {
@@ -1625,4 +1626,19 @@ Maze.downloadFile = function (name, content) {
   a.href = URL.createObjectURL(file);
   a.download = name;
   a.click();
+}
+
+Maze._images = [];
+Maze.preloadImgs = function (imgs) {
+    for (var i = 0; i < imgs.length; i++) {
+        Maze._images[i] = new Image();
+        Maze._images[i].src = imgs[i];
+    }
+}
+Maze.preloadAllImgs = function () {
+    Maze.preloadImgs([
+        "images/goal_big.png",
+        "images/goal_big_disabled.png",
+        "images/ball_big.png",
+    ]);
 }
