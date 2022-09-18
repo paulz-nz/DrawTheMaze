@@ -14,7 +14,7 @@
 <body onload="Maze.initialise();">
     <div class="header">
         <select id="SELECTMAZE" onchange="Maze.selectSavedMaze(this.value, this.previousValue)" onclick="this.previousValue = this.selectedIndex"></select>
-        <input id="MAZENAME_EDIT" type="text" maxlength="30" onblur="Maze.changeMazeTitle_blur(this)" onkeyup="Maze.blurOnEnter(this.event, this)" />
+        <input style="display: none" id="MAZENAME_EDIT" type="text" maxlength="30" onblur="Maze.changeMazeTitle_blur(this)" onkeyup="Maze.blurOnEnter(this.event, this)" />
     </div>
 
     <div class="content">
@@ -48,51 +48,51 @@
         <button id="STARTAPPBAR" class="appBarButton playButton appBarLeft appBarPlay" title="Start the game"
             onclick="Maze.startOrPause('Start!')">Start!</button>
 
-        <button id="PAUSEAPPBAR" class="appBarButton pauseButton appBarLeft appBarPlay" title="Pause the game"
+        <button id="PAUSEAPPBAR" class="hide appBarButton pauseButton appBarLeft appBarPlay" title="Pause the game"
             onclick="Maze.startOrPause('Pause')">Pause</button>
 
-        <button id="RESUMEAPPBAR" class="appBarButton playButton appBarLeft appBarPlay" title="Resume the game"
+        <button id="RESUMEAPPBAR" class="hide appBarButton playButton appBarLeft appBarPlay" title="Resume the game"
             onclick="Maze.startOrPause('Resume')">Resume</button>
 
         <!--EDIT-->
-        <button class="appBarButton newButton appBarLeft appBarEdit" title="Create a new maze"
+        <button class="hide appBarButton newButton appBarLeft appBarEdit" title="Create a new maze"
             onclick="Maze.new()">New</button>
 
-        <button class="appBarButton renameButton appBarLeft appBarEdit" title="Rename the maze"
+        <button class="hide appBarButton renameButton appBarLeft appBarEdit" title="Rename the maze"
             onclick="Maze.changeMazeTitle()">Rename</button>
 
-        <button class="appBarButton saveButton appBarLeft appBarEdit" title="Save current Maze"
+        <button class="hide appBarButton saveButton appBarLeft appBarEdit" title="Save current Maze"
             onclick="Maze.save()">Save</button>
 
-        <button class="appBarButton saveAsButton appBarLeft appBarEdit" title="Copy the current maze into a new Maze"
+        <button class="hide appBarButton saveAsButton appBarLeft appBarEdit" title="Copy the current maze into a new Maze"
             onclick="Maze.saveAsNew()">Save As</button>
 
-        <button class="appBarButton deleteButton appBarLeft appBarEdit" title="Delete the current Maze"
+        <button class="hide appBarButton deleteButton appBarLeft appBarEdit" title="Delete the current Maze"
             onclick="Maze.delete()">Delete</button>
 
-        <button id="UNDO" class="appBarButton undoButton appBarLeft appBarEdit" title="Undo the last change"
+        <button id="UNDO" class="hide appBarButton undoButton appBarLeft appBarEdit" title="Undo the last change"
             onclick="Maze.edit_undo()">Undo</button>
 
-        <button class="appBarButton clearButton appBarLeft appBarEdit" title="Delete all walls and Start/Goals"
+        <button class="hide appBarButton clearButton appBarLeft appBarEdit" title="Delete all walls and Start/Goals"
             onclick="Maze.edit_clearAll()">Clear All</button>
 
-        <button id="LOCKGOALS" class="appBarButton lockButton appBarLeft appBarEdit" title="Lock the Start/Goals while editing"
+        <button id="LOCKGOALS" class="hide appBarButton lockButton appBarLeft appBarEdit" title="Lock the Start/Goals while editing"
             onclick="Maze.edit_lockStartGoals(true)">Lock Goals</button>
 
-        <button id="UNLOCKGOALS" class="appBarButton unlockButton appBarLeft appBarEdit" title="Unlock the Start/Goals while editing"
+        <button id="UNLOCKGOALS" class="hide appBarButton unlockButton appBarLeft appBarEdit" title="Unlock the Start/Goals while editing"
             onclick="Maze.edit_lockStartGoals(false)">Unlock Goals</button>
 
-        <button id="RESIZE" class="appBarButton resizeButton appBarLeft appBarEdit" title="Reszie the current Maze"
+        <button id="RESIZE" class="hide appBarButton resizeButton appBarLeft appBarEdit" title="Reszie the current Maze"
             onclick="Maze.resizeAction()">Resize</button>
 
 
         <button class="appBarButton importButton appBarLeft" title="Import a .maze file"
             onclick="Maze.importMaze()">Import</button>
 
-        <button class="appBarButton exportButton appBarLeft appBarEdit" title="Export the current maze as a .maze file"
+        <button class="hide appBarButton exportButton appBarLeft appBarEdit" title="Export the current maze as a .maze file"
             onclick="Maze.exportMaze()">Export</button>
 
-        <button class="appBarButton editButton appBarRight appBarPlay" title="Enter Edit Mode"
+        <button class="hide appBarButton editButton appBarRight appBarPlay" title="Enter Edit Mode"
             onclick="Maze.toggleMode(true)">Edit Mode</button>
 
         <button class="appBarButton playButton appBarRight appBarEdit" title="Enter Play Mode"
