@@ -905,7 +905,6 @@ Maze.toggleMode = function (isEditMode) {
 
     // Switch menus
     document.getElementById("PLAYMENU").style.display = isEditMode ? "none" : "";
-    document.getElementById("CHEATS").style.display = isEditMode ? "none" : "";
 
     Maze.toggleAppBar();
 }
@@ -940,6 +939,11 @@ Maze.resizeAction = async function () {
 
     if (confirmed) {
         var input = document.getElementById("ALERTINPUT").value;
+
+        if (input == "CHEATER") {
+            document.querySelectorAll(".easterEgg").forEach(a=>a.classList.remove("cheat"));
+            return;
+        }
 
         await Maze.resize(input, false, true);
     }

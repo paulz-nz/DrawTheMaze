@@ -141,16 +141,6 @@ h2 {
     margin: 10px 0;
 }
 
-.easterEgg {
-    height: 50px;
-    width: 50px;
-    float: right;
-    background-color: #F9F9F9; /* Light Theme */
-    /*background-color: #1C1C1C;*/ /* Dark Theme */
-    margin-left: 5px;
-    margin-bottom: 10px;
-}
-
 #TIMER {
     font-size: 30px;
     margin-right: 20px;
@@ -230,6 +220,7 @@ input {
 
 .appBarButton {
     margin: 2px;
+    height: 48px;
     /*font-family: 'Segoe UI Light';*/
     /*font-size: 11pt;*/
 }
@@ -277,6 +268,17 @@ input {
 }
 
 .hide {
+    display: none;
+}
+
+.easterEgg {
+    height: 48px;
+    width: 48px;
+    float: left;
+    margin: 2px;
+}
+
+.cheat {
     display: none;
 }
 

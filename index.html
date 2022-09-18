@@ -90,6 +90,12 @@
         <button class="appBarButton importButton appBarLeft" title="Import a .maze file"
             onclick="Maze.importMaze()">Import</button>
 
+        <button class="easterEgg cheat appBarPlay" title="Show Full Maze" onclick="Maze.easterEgg_showFullMaze();">Birds Eye</button>
+        <button class="easterEgg cheat appBarPlay" title="Inline Edit" onclick="Maze.easterEgg_inlineEdit();">Inline Edit</button>
+        <button class="easterEgg cheat appBarPlay" title="Reset Timer" onclick="Maze.easterEgg_resetTimer()">Reset Timer</button>
+        <button class="easterEgg cheat appBarPlay" title="Walk Through Walls" onclick="Maze.easterEgg_walkThroughWalls()">No Clip</button>
+        <button class="easterEgg cheat appBarPlay" title="Invisible Walls" onclick="Maze.easterEgg_invisibleWalls()">Hide Walls</button>
+
         <button class="hide appBarButton exportButton appBarLeft appBarEdit" title="Export the current maze as a .maze file"
             onclick="Maze.exportMaze()">Export</button>
 
@@ -98,14 +104,6 @@
 
         <button class="appBarButton playButton appBarRight appBarEdit" title="Enter Play Mode"
             onclick="Maze.toggleMode(false)">Play Mode</button>
-
-        <div id="CHEATS" class="hide">
-            <div class="easterEgg" title="Show Full Maze" onclick="Maze.easterEgg_showFullMaze();"></div>
-            <div class="easterEgg" title="Inline Edit" onclick="Maze.easterEgg_inlineEdit();"></div>
-            <div class="easterEgg" title="Reset Timer" onclick="Maze.easterEgg_resetTimer()"></div>
-            <div class="easterEgg" title="Walk Through Walls" onclick="Maze.easterEgg_walkThroughWalls()"></div>
-            <div class="easterEgg" title="Invisible Walls" onclick="Maze.easterEgg_invisibleWalls()"></div>
-        </div>
     </div>
     <!--END APP BAR-->
 
