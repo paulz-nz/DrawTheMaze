@@ -338,6 +338,7 @@ input {
 }
 
 #ALERTFALSE, #ALERTCANCEL {
+    font-size: 12pt;
     border: 0.1em solid #008CBA;
     background-color: #fff;
     color: #008CBA;
@@ -453,7 +454,7 @@ button::before {
     filter: invert(100%);
 }
 button:hover,input[type=button]:hover {
-    color: #00BCBA;
+    color: #008CBA;
     background-color: #fff;
     border-color: #fff;
 }
