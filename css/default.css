@@ -208,10 +208,12 @@ input {
 
 #appBar {
    margin-top: 10px;
+   display: flex;
+   flex-wrap: wrap;
 }
 
 .appBarRight {
-    float: right;
+    margin-left: auto !important;
 }
 
 .appBarLeft {
@@ -223,6 +225,8 @@ input {
     height: 48px;
     /*font-family: 'Segoe UI Light';*/
     /*font-size: 11pt;*/
+    min-width: 82px;
+    box-sizing: border-box;
 }
 
     .resizeButton div {
